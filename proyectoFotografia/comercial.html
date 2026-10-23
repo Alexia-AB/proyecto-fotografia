@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografía Comercial | DAIN Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo-container">
+                <span class="logo-main">DAIN</span>
+                <span class="logo-sub">STUDIO</span>
+            </div>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="comercial.html">Comercial</a></li>
+                <li><a href="retrato.html">Retrato</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA COMERCIAL -->
+    <main class="comercial-container">
+        
+        <!-- ENCABEZADO DE LA CATEGORÍA -->
+        <section class="comercial-header">
+            <h1>FOTOGRAFÍA Y VIDEO COMERCIAL</h1>
+            <h2>Imágenes poderosas para vender, comunicar y diferenciar tu marca</h2>
+            <p>Somos expertos en producción de video y fotografía especializada para empresas, negocios y organizaciones que buscan resultados alineados con sus objetivos estratégicos. Contamos historias, sensibilizamos y conectamos con las audiencias correctas combinando recursos técnicos, funcionales y emocionales para lograr un alto grado de calidad e impacto.</p>
+        </section>
+
+        <!-- BLOQUE 1: FOTOGRAFÍA DE PRODUCTO -->
+        <section class="showcase-block">
+            <div class="showcase-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1705425155453-e91429ec3aa6?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Fotografía de Producto" class="showcase-img">
+            </div>
+            <div class="showcase-card">
+                <h3>Fotografía de producto</h3>
+                <p>Foto para plataformas ecommerce, catálogo y redes sociales.</p>
+                <a href="proyectos.html"><button class="btn btn-showcase">Ver proyectos &gt;</button></a>
+            </div>
+        </section>
+
+        <!-- BLOQUE 2: GASTRONOMÍA Y FOOD STYLING -->
+        <section class="showcase-block block-reverse">
+            <div class="showcase-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1600184892175-ce1892ecd901?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Gastronomía y Food Styling" class="showcase-img">
+            </div>
+            <div class="showcase-card">
+                <h3>Gastronomía y Food Styling</h3>
+                <p>Imágenes diseñadas para menús digitales, campañas publicitarias y marcas de alimentos.</p>
+                <a href="proyectos.html"><button class="btn btn-showcase">Ver proyectos &gt;</button></a>
+            </div>
+        </section>
+
+        <!-- BLOQUE 3: ARQUITECTURA E INTERIORISMO -->
+        <section class="showcase-block">
+            <div class="showcase-image-wrapper">
+                <img src="https://plus.unsplash.com/premium_photo-1733317296503-b1848b1df3aa?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Arquitectura e Interiorismo" class="showcase-img">
+            </div>
+            <div class="showcase-card">
+                <h3>Arquitectura e Interiorismo</h3>
+                <p>Reportajes fotográficos de espacios comerciales, complejos inmobiliarios, hoteles y proyectos de diseño interior.</p>
+                <a href="proyectos.html"><button class="btn btn-showcase">Ver proyectos &gt;</button></a>
+            </div>
+        </section>
+
+        <!-- BLOQUE 4: PUBLICIDAD Y LIFESTYLE -->
+        <section class="showcase-block block-reverse">
+            <div class="showcase-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1594502184342-2e12f877aa73?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Campañas Publicitarias" class="showcase-img">
+            </div>
+            <div class="showcase-card">
+                <h3>Campañas y Corporativo</h3>
+                <p>Producción visual orientada al branding, retratos directivos y contenido conceptual para conectar emocionalmente con tu público.</p>
+                <a href="proyectos.html"><button class="btn btn-showcase">Ver proyectos &gt;</button></a>
+            </div>
+        </section>
+
+        <!-- BLOQUE 5: VIDEO COMERCIAL AÉREO Y TERRESTRE -->
+        <section class="showcase-block">
+            <div class="showcase-image-wrapper">
+                <!-- CAMBIO: Ahora apunta directamente a tu archivo descargado -->
+                <video autoplay loop muted playsinline class="showcase-video">
+                    <source src="videos/video-comercial.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+            <div class="showcase-card">
+                <h3>Video comercial aéreo y terrestre</h3>
+                <p>Producción de alta definición para eventos, proyectos urbanos e inmobiliarios, arquitectura, turismo, documentales o publicidad.</p>
+                <a href="proyectos.html"><button class="btn btn-showcase">Ver proyectos &gt;</button></a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section class="contact-section">
+        <div class="contact-box">
+            <h2>¿Tienes un proyecto en mente?</h2>
+            <p>Cuéntanos qué necesitas y le daremos vida a tus ideas.</p>
+            <form class="contact-form" onsubmit="return false;">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Correo Electrónico" required>
+                <textarea placeholder="Cuéntanos un poco sobre tu proyecto..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Solicitar Información</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (IDÉNTICO AL HOME) -->
+    <footer>
+        <p>&copy; 2026 DAIN Studio. Todos los derechos reservados. | Materia: Ingeniería de Software II</p>
+    </footer>
+
+</body>
+</html>
