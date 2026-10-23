@@ -1,0 +1,1635 @@
+/* ==========================================================================
+   GOOGLE FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap');
+
+
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafbfa;
+    color: #242924;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================================================
+   MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6rem;
+    background-color: #556653;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #445242;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: #ffffff;
+}
+
+.logo-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: #d1ded0;
+    margin-top: 4px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 3rem;
+}
+
+.nav-links a {
+    color: #e3ebe2;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    font-weight: 500;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 4px;
+}
+
+
+/* ==========================================================================
+   BOTONES GLOBALES
+   ========================================================================== */
+.btn {
+    padding: 0.9rem 2.4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #556653;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #3f4d3e;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #556653;
+    border: 1px solid #556653;
+}
+
+.btn-secondary:hover {
+    background-color: #556653;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   SECCIÓN HERO (INDEX)
+   ========================================================================== */
+.hero {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: grayscale(20%) contrast(95%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #242924;
+    margin-bottom: 1.5rem;
+    max-width: 950px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    color: #4f594e;
+    max-width: 550px;
+    margin: 0 auto 2.5rem auto;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+/* ==========================================================================
+   SECCIÓN MÁS QUE SOLO FOTOGRAFÍA (INDEX)
+   ========================================================================== */
+.features-section {
+    padding: 6rem 0 3rem 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    color: #242924;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+.features-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.feature-card:not(:last-child) {
+    border-right: 1px solid #ebedea;
+}
+
+.feature-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.svg-icon {
+    width: 32px;
+    height: 32px;
+    fill: #556653;
+    transition: fill 0.3s ease;
+}
+
+.feature-card:hover .svg-icon {
+    fill: #99b396;
+}
+
+.feature-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #242924;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: #586157;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   CUADRÍCULA DE SERVICIOS (INDEX)
+   ========================================================================== */
+.services-section {
+    max-width: 100%;
+    background-color: #ffffff;
+    padding: 4rem 2rem 8rem 2rem;
+    border-bottom: 1px solid #ebedea;
+}
+
+.services-section h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 4rem;
+    font-size: 2.2rem;
+    color: #242924;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: transparent;
+    text-align: left;
+}
+
+.service-item img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    filter: grayscale(10%);
+    transition: all 0.5s ease;
+}
+
+.service-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+}
+
+.service-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    margin: 1.2rem 0 0.4rem 0;
+    font-size: 1.3rem;
+    color: #242924;
+}
+
+.service-item p {
+    color: #586157;
+    font-size: 0.88rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.more-link {
+    color: #556653;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #556653;
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.more-link:hover {
+    color: #3f4d3e;
+    border-bottom-color: #3f4d3e;
+}
+
+
+/* ==========================================================================
+   TESTIMONIOS (INDEX)
+   ========================================================================== */
+.testimonials-section {
+    padding: 7rem 4rem;
+    background-color: #f5f7f4;
+    text-align: center;
+    border-top: 1px solid #eef2ed;
+    border-bottom: 1px solid #e1e6df;
+}
+
+.testimonials-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #7c857b;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #242924;
+    margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e6e1;
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(85, 102, 83, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(85, 102, 83, 0.08);
+}
+
+.rating-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1.5rem;
+}
+
+.rating-stars svg {
+    width: 14px;
+    height: 14px;
+    fill: #556653;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #4f594e;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #f4f6f3;
+    padding-top: 1.2rem;
+}
+
+.client-initials {
+    width: 42px;
+    height: 42px;
+    background-color: #eef2ed;
+    color: #556653;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.client-details h4 {
+    font-size: 0.95rem;
+    color: #242924;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.client-details p {
+    font-size: 0.78rem;
+    color: #7c857b;
+    font-weight: 300;
+}
+
+
+/* ==========================================================================
+   SECCIÓN CONTACTO (INDEX / COMERCIAL)
+   ========================================================================== */
+.contact-section {
+    background-color: #eef2ed;
+    padding: 8rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box {
+    background-color: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    padding: 4rem 3.5rem;
+    border-radius: 8px;
+    border: 1px solid #e1e6df;
+    box-shadow: 0 10px 30px rgba(85, 102, 83, 0.02);
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: #242924;
+}
+
+.contact-box p {
+    color: #586157;
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccd4cb;
+    color: #242924;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-bottom-color: #556653;
+}
+
+.contact-form .btn {
+    margin-top: 1.5rem;
+    align-self: center;
+}
+
+
+/* ==========================================================================
+   REDES SOCIALES (INDEX)
+   ========================================================================== */
+.social-section {
+    background-color: #546354;
+    padding: 5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #b3c2b1;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.social-text {
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.social-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+}
+
+.svg-social {
+    width: 26px;
+    height: 26px;
+    fill: #e7d9c2;
+    transition: fill 0.3s ease;
+}
+
+.social-link:hover .svg-social {
+    fill: #ffffff;
+}
+
+
+/* ==========================================================================
+   PIE DE PÁGINA (GLOBAL)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #fafbfa;
+    color: #798278;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #ebedea;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INTERNA: COMERCIAL.HTML
+   ========================================================================== */
+.comercial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.comercial-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 6rem auto;
+}
+
+.comercial-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #556653;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.comercial-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #242924;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.comercial-header p {
+    font-size: 1rem;
+    color: #586157;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.showcase-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+    gap: 4rem;
+    position: relative;
+}
+
+.showcase-block.block-reverse {
+    flex-direction: row-reverse;
+}
+
+.showcase-image-wrapper {
+    flex: 1.3;
+    height: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.showcase-block:hover .showcase-img {
+    transform: scale(1.03);
+}
+
+.showcase-card {
+    flex: 1;
+    background-color: rgba(36, 41, 36, 0.95);
+    color: #ffffff;
+    padding: 4rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.showcase-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.showcase-card p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #d1ded0;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.showcase-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-showcase {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-showcase:hover {
+    background-color: #ffffff;
+    color: #242924;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INTERNA: RETRATO.HTML
+   ========================================================================== */
+.retrato-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem 2rem;
+}
+
+.retrato-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+}
+
+.retrato-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #556653;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.retrato-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #242924;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.5px;
+}
+
+.retrato-description p {
+    font-size: 0.95rem;
+    color: #586157;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.retrato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    row-gap: 5rem;
+    margin-bottom: 4rem;
+}
+
+.retrato-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.retrato-img-wrapper {
+    position: relative;
+    height: 480px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.retrato-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.retrato-item:hover .retrato-img {
+    transform: scale(1.02);
+}
+
+.retrato-overlay-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    display: flex;
+    align-items: flex-end;
+}
+
+.retrato-overlay-title h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.retrato-text {
+    font-size: 0.88rem;
+    color: #586157;
+    line-height: 1.6;
+    font-weight: 300;
+    padding: 0 0.5rem;
+}
+
+.btn-retrato-projects {
+    background-color: transparent;
+    color: #556653;
+    border: 1px solid #556653;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    align-self: center;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.btn-retrato-projects:hover {
+    background-color: #556653;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INTERNA: PROYECTOS.HTML
+   ========================================================================== */
+.proyectos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem 2rem;
+}
+
+.proyectos-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.proyectos-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #556653;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.proyecto-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.proyecto-img-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.proyecto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.proyecto-card:hover .proyecto-img {
+    transform: scale(1.02);
+}
+
+.proyecto-info-box {
+    background-color: #3b423a;
+    color: #ffffff;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.proyecto-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #b3c2b1;
+    font-weight: 500;
+}
+
+.proyecto-info-box h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.proyecto-info-box p {
+    font-size: 0.88rem;
+    color: #e3ebe2;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INTERNA: NOSOTROS.HTML
+   ========================================================================== */
+.nosotros-container {
+    max-width: 100%;
+}
+
+.about-hero {
+    position: relative;
+    height: 65vh;
+    background: linear-gradient(rgba(250, 251, 250, 0.85), rgba(250, 251, 250, 0.85)),
+                url('https://images.unsplash.com/photo-1598006640672-f0cc33c40702?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid #ebedea;
+}
+
+.about-hero-content {
+    max-width: 900px;
+    z-index: 2;
+}
+
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: #556653;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.about-hero .intro-lead {
+    font-size: 1.1rem;
+    color: #242924;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0;
+}
+
+.about-sectors-wrapper {
+    max-width: 1100px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.about-sectors {
+    display: flex;
+    gap: 4rem;
+    text-align: left;
+}
+
+.sector-block {
+    flex: 1;
+}
+
+.sector-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #556653;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.sector-block p {
+    font-size: 0.95rem;
+    color: #586157;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.philosophy-section {
+    background-color: #ffffff;
+    border: 1px solid #ebedea;
+    border-radius: 8px;
+    padding: 4rem 3rem;
+    margin: 0 auto 6rem auto;
+    max-width: 1100px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.philosophy-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #242924;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.philosophy-lead {
+    font-size: 0.95rem;
+    color: #586157;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.philosophy-grid {
+    display: flex;
+    gap: 3rem;
+    text-align: left;
+}
+
+.philosophy-card {
+    flex: 1;
+    background-color: #fafbfa;
+    padding: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid #ebedea;
+}
+
+.philosophy-icon svg {
+    width: 36px;
+    height: 36px;
+    fill: #556653;
+    margin-bottom: 1.2rem;
+}
+
+.philosophy-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #242924;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.philosophy-card p {
+    font-size: 0.9rem;
+    color: #586157;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INTERNA: CONTACTO.HTML
+   ========================================================================== */
+.contacto-main-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+/* 1. Columna del Formulario */
+.contacto-form-column h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #556653;
+    margin-bottom: 0.3rem;
+}
+
+.contacto-form-column h2 {
+    font-size: 1.1rem;
+    color: #7c857b;
+    font-weight: 400;
+    margin-bottom: 3.5rem;
+}
+
+.contacto-page-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #556653;
+    letter-spacing: 0.5px;
+}
+
+.contacto-page-form input,
+.contacto-page-form textarea,
+.contacto-page-form select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ccd4cb;
+    color: #242924;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.contacto-page-form input:focus,
+.contacto-page-form textarea:focus,
+.contacto-page-form select:focus {
+    outline: none;
+    border-color: #556653;
+}
+
+.btn-contacto-send {
+    background-color: #375334;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    width: fit-content;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-contacto-send:hover {
+    background-color: #6b816e;
+}
+
+/* 2. Columna del Mapa e Información */
+.contacto-info-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding-top: 2rem;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 380px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ebedea;
+}
+
+.studio-address-box .address-text {
+    font-size: 1rem;
+    color: #4f594e;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.studio-address-box .phone-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #242924;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.contacto-social-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.contacto-social-link svg {
+    width: 22px;
+    height: 22px;
+    fill: #7c857b;
+    transition: fill 0.3s;
+}
+
+.contacto-social-link:hover svg {
+    fill: #556653;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 900px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   MODAL DE LOGIN
+   ========================================================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    z-index: 2001;
+    width: 90%;
+    max-width: 400px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #7c857b;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-cerrar:hover {
+    color: #242924;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group-login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group-login label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #556653;
+}
+
+.form-group-login input {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccd4cb;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #242924;
+}
+
+.form-group-login input:focus {
+    outline: none;
+    border-color: #556653;
+}
+
+.mensaje-error {
+    color: #b3402f;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.title-modal {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #556653;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.btn-submit-login {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+
+/* ==========================================================================
+   BOTÓN HAMBURGUESA (RESPONSIVE)
+   ========================================================================== */
+#btn-hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#btn-hamburguesa span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================================
+   CARRUSEL DE SERVICIOS
+   ========================================================================== */
+.title-carrusel {
+    font-family: 'Playfair Display', serif !important;
+    text-align: center;
+    font-size: 2rem;
+    color: #242924;
+    margin-bottom: 3rem;
+}
+
+.carrusel-seccion {
+    padding: 5rem 2rem;
+    background-color: #fafbfa;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.contenedor-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: calc(100% / 3);
+    padding: 0 0.8rem;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.slide p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #242924;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border: 1px solid #ebedea;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    color: #556653;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-carrusel:hover {
+    background-color: #556653;
+    color: #ffffff;
+}
+
+.btn-anterior {
+    left: 0;
+}
+
+.btn-siguiente {
+    right: 0;
+}
+
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccd4cb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicador.activo {
+    background-color: #556653;
+}
+
+
+/* ==========================================================================
+   PÁGINA BIENVENIDA
+   ========================================================================== */
+.bienvenida-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+    background-color: #fafbfa;
+    padding: 2rem;
+}
+
+.bienvenida-contenido h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #556653;
+    margin-bottom: 1rem;
+}
+
+.bienvenida-contenido p {
+    font-size: 1.1rem;
+    color: #586157;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/* ==========================================================================
+   MEDIA QUERIES — RESPONSIVE GENERAL
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .slide {
+        min-width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar responsive */
+    .navbar {
+        padding: 1.2rem 2rem;
+    }
+
+    #btn-hamburguesa {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #556653;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.2rem;
+        display: none;
+    }
+
+    .nav-links.menu-abierto {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    .hero {
+        height: 55vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .features-grid,
+    .services-grid,
+    .testimonials-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .feature-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #ebedea;
+    }
+
+    .slide {
+        min-width: 100%;
+    }
+
+    .btn-carrusel {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-block,
+    .showcase-block.block-reverse {
+        flex-direction: column;
+    }
+
+    .showcase-image-wrapper {
+        height: 300px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .comercial-header h1,
+    .retrato-header h1,
+    .proyectos-header h1,
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .login-modal {
+        padding: 2rem 1.5rem;
+    }
+
+    .bienvenida-contenido h1 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   MENSAJE DE ÉXITO DEL FORMULARIO
+   ========================================================================== */
+.mensaje-exito {
+    display: none;
+    color: #3f6b3c;
+    background-color: #eef5ed;
+    border: 1px solid #c5dcc3;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.mensaje-exito.visible {
+    display: block;
+}

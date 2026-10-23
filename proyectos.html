@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Éxito | DAIN Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo-container">
+                <span class="logo-main">DAIN</span>
+                <span class="logo-sub">STUDIO</span>
+            </div>
+        </a>
+        <nav>
+            <button id="btn-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="comercial.html">Comercial</a></li>
+                <li><a href="retrato.html">Retrato</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li id="li-login"><a href="#" id="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE CASOS DE ÉXITO -->
+    <main class="proyectos-container">
+        
+        <!-- ENCABEZADO CENTRADO -->
+        <section class="proyectos-header">
+            <h1>CASOS DE ÉXITO</h1>
+        </section>
+
+        <!-- CUADRÍCULA DE DOS COLUMNAS -->
+        <section class="proyectos-grid">
+            
+            <!-- Caso de Éxito 1 -->
+            <div class="proyecto-card">
+                <div class="proyecto-img-wrapper">
+                    <img src="https://lacasadetono.mx/wp-content/uploads/2024/05/34625184.png" alt="La Casa de Toño" class="proyecto-img">
+                </div>
+                <div class="proyecto-info-box">
+                    <span class="proyecto-tag">Restaurante</span>
+                    <h3>La Casa de Toño CDMX</h3>
+                    <p>Producción fotográfica de contenido estratégico para plataformas digitales e introducción de nuevos platillos tradicionales en el menú digital.</p>
+                </div>
+            </div>
+
+            <!-- Caso de Éxito 2 -->
+            <div class="proyecto-card">
+                <div class="proyecto-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1586413595198-1840407316e9?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Chanel" class="proyecto-img">
+                </div>
+                <div class="proyecto-info-box">
+                    <span class="proyecto-tag">Bolsas y Alta Costura</span>
+                    <h3>Chanel México</h3>
+                    <p>Fotografía editorial de producto con modelos internacionales para la campaña de temporada en redes sociales y catálogos de comercio electrónico.</p>
+                </div>
+            </div>
+
+            <!-- Caso de Éxito 3 -->
+            <div class="proyecto-card">
+                <div class="proyecto-img-wrapper">
+                    <img src="https://plus.unsplash.com/premium_photo-1663126637580-ff22a73f9bfc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Hoteles Marriott" class="proyecto-img">
+                </div>
+                <div class="proyecto-info-box">
+                    <span class="proyecto-tag">Arquitectura e Interiorismo</span>
+                    <h3>JW Marriott Hotels</h3>
+                    <p>Reportaje fotográfico de interiores y espacios arquitectónicos de lujo enfocado en destacar la iluminación de las nuevas suites ejecutivas.</p>
+                </div>
+            </div>
+
+            <!-- Caso de Éxito 4 -->
+            <div class="proyecto-card">
+                <div class="proyecto-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1723647395168-d916159b78c9?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Dior Cosméticos" class="proyecto-img">
+                </div>
+                <div class="proyecto-info-box">
+                    <span class="proyecto-tag">Cosmética Premium</span>
+                    <h3>Dior Beauty</h3>
+                    <p>Fotografía publicitaria conceptual con esquemas de iluminación artística para el lanzamiento exclusivo de la nueva línea de fragancias.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 DAIN Studio. Todos los derechos reservados. | Materia: Ingeniería de Software II</p>
+    </footer>
+
+    <!-- MODAL DE LOGIN -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div id="login-modal" class="login-modal">
+        <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+        <h2 class="title-modal">Iniciar Sesión</h2>
+        <form id="form-login" class="form-login">
+            <div class="form-group-login">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" name="usuario" placeholder="Ingrese su usuario" required>
+            </div>
+            <div class="form-group-login">
+                <label for="input-contrasena">Contraseña:</label>
+                <input type="password" id="input-contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+            <p id="mensaje-error" class="mensaje-error" style="display: none;">
+                Usuario o contraseña incorrectos.
+            </p>
+            <button type="submit" class="btn btn-primary btn-submit-login">Ingresar</button>
+        </form>
+    </div>
+
+    <!-- ENLAZAR EL JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

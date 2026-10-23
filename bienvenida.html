@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - DAIN Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo-container">
+                <span class="logo-main">DAIN</span>
+                <span class="logo-sub">STUDIO</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="comercial.html">Comercial</a></li>
+            <li><a href="retrato.html">Retrato</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#" id="btn-logout">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="bienvenida-container">
+        <div class="bienvenida-contenido">
+            <h1>Bienvenido al sistema</h1>
+            <p>Has iniciado sesión correctamente.</p>
+            <a href="index.html">
+                <button class="btn btn-primary">Volver al inicio</button>
+            </a>
+        </div>
+    </main>
+
+    <!-- SCRIPT DE SESIÓN -->
+    <script>
+        // Verificar si hay sesión activa
+        if (localStorage.getItem('sesion') !== 'activa') {
+            window.location.href = 'index.html';
+        }
+
+        // Botón cerrar sesión
+        document.getElementById('btn-logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('sesion');
+            window.location.href = 'index.html';
+        });
+    </script>
+
+</body>
+</html>

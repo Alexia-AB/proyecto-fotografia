@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | DAIN Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <div class="logo-container">
+                <span class="logo-main">DAIN</span>
+                <span class="logo-sub">STUDIO</span>
+            </div>
+        </a>
+        <nav>
+            <button id="btn-hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="comercial.html">Comercial</a></li>
+                <li><a href="retrato.html">Retrato</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li id="li-login"><a href="#" id="btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL DE CONTACTO DE DOS COLUMNAS -->
+    <main class="contacto-main-container">
+        <div class="contacto-grid">
+            
+            <!-- COLUMNA IZQUIERDA: FORMULARIO DETALLADO -->
+            <div class="contacto-form-column">
+                <h1>¿Tienes un proyecto en mente?</h1>
+                <h2>Cuéntanos qué necesitas producir</h2>
+                
+                <form class="contacto-page-form" action="https://formspree.io/f/mvkkpjdp" method="POST">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="correo" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono" placeholder="Teléfono" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Déjanos un mensaje...</label>
+                        <textarea name="mensaje" placeholder="Platícanos más de tu proyecto" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Forma de contacto</label>
+                        <select name="forma-contacto" required>
+                            <option value="" disabled selected>¿Cómo prefieres ser contactado?</option>
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="llamada">Llamada telefónica</option>
+                            <option value="correo">Correo electrónico</option>
+                        </select>
+                    </div>
+                    
+                    <input type="hidden" name="_next" value="contacto.html?enviado=true">
+                    <button type="submit" class="btn btn-contacto-send">Enviar</button>
+                    <p id="mensaje-exito" class="mensaje-exito">✓ ¡Gracias! Tu mensaje ha sido enviado correctamente.</p>
+                </form>
+            </div>
+
+            <!-- COLUMNA DERECHA: MAPA Y DATOS DE LA AGENCIA -->
+            <div class="contacto-info-column">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4206.355364102403!2d-98.155411!3d18.9346557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf0e607fb1c7%3A0x4565544d2e6ed9a8!2sBUAP%20-%20Ciudad%20Universitaria%202!5e1!3m2!1ses-419!2smx!4v1792217186233!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+
+                <!-- Datos de Ubicación -->
+                <div class="studio-address-box">
+                    <p class="address-text">Independencia O 2 Sur<br>72960 San Pedro Zacachimalpa<br>Puebla, Pue.</p>
+                    <p class="phone-text">T. 222 333 4455</p>
+                </div>
+
+                <!-- Iconos de Redes Sociales Manuales SVG -->
+                <div class="contacto-social-icons">
+                    <a href="#" class="contacto-social-link">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <a href="#" class="contacto-social-link">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 DAIN Studio. Todos los derechos reservados. | Materia: Ingeniería de Software II</p>
+    </footer>
+
+    <!-- MODAL DE LOGIN -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div id="login-modal" class="login-modal">
+        <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+        <h2 class="title-modal">Iniciar Sesión</h2>
+        <form id="form-login" class="form-login">
+            <div class="form-group-login">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" name="usuario" placeholder="Ingrese su usuario" required>
+            </div>
+            <div class="form-group-login">
+                <label for="input-contrasena">Contraseña:</label>
+                <input type="password" id="input-contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+            <p id="mensaje-error" class="mensaje-error" style="display: none;">
+                Usuario o contraseña incorrectos.
+            </p>
+            <button type="submit" class="btn btn-primary btn-submit-login">Ingresar</button>
+        </form>
+    </div>
+
+    <!-- ENLAZAR EL JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
