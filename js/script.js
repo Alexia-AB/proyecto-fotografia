@@ -1,99 +1,4 @@
 // ==========================================================================
-// SISTEMA DE LOGIN
-// ==========================================================================
-
-// Credenciales
-const USUARIO_CORRECTO = 'admin';
-const CONTRASENA_CORRECTA = 'dain2026';
-
-// Elementos del modal
-const modal = document.getElementById('login-modal');
-const btnLogin = document.getElementById('btn-login');
-const btnCerrar = document.getElementById('btn-cerrar-modal');
-const overlay = document.getElementById('modal-overlay');
-const formulario = document.getElementById('form-login');
-const mensajeError = document.getElementById('mensaje-error');
-
-// Abrir modal al hacer click en "Login"
-if (btnLogin) {
-    btnLogin.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (modal) {
-            modal.style.display = 'flex';
-        }
-    });
-}
-
-// Cerrar modal con botón X
-if (btnCerrar) {
-    btnCerrar.addEventListener('click', function() {
-        modal.style.display = 'none';
-        formulario.reset();
-        mensajeError.style.display = 'none';
-    });
-}
-
-// Cerrar modal al hacer click fuera
-if (overlay) {
-    overlay.addEventListener('click', function() {
-        modal.style.display = 'none';
-        formulario.reset();
-        mensajeError.style.display = 'none';
-    });
-}
-
-// Cerrar modal con tecla Escape
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
-        modal.style.display = 'none';
-        formulario.reset();
-        mensajeError.style.display = 'none';
-    }
-});
-
-// Validar credenciales al enviar el formulario
-if (formulario) {
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const usuario = document.getElementById('input-usuario').value;
-        const contrasena = document.getElementById('input-contrasena').value;
-
-        if (usuario === USUARIO_CORRECTO && contrasena === CONTRASENA_CORRECTA) {
-            // Login correcto: guardar sesión y redirigir
-            localStorage.setItem('sesion', 'activa');
-
-            // Ocultar login y mostrar cerrar sesión en la navbar
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks) {
-                const btnLoginLi = document.getElementById('li-login');
-                if (btnLoginLi) {
-                    btnLoginLi.style.display = 'none';
-                }
-                // Agregar botón cerrar sesión si no existe
-                if (!document.getElementById('li-logout')) {
-                    const btnLogout = document.createElement('li');
-                    btnLogout.id = 'li-logout';
-                    btnLogout.innerHTML = '<a href="#" id="btn-logout">Cerrar Sesión</a>';
-                    btnLogout.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        localStorage.removeItem('sesion');
-                        location.reload();
-                    });
-                    navLinks.appendChild(btnLogout);
-                }
-            }
-
-            // Redirigir a bienvenida
-            window.location.href = 'bienvenida.html';
-        } else {
-            // Login incorrecto: mostrar error
-            mensajeError.style.display = 'block';
-        }
-    });
-}
-
-// ==========================================================================
 // MENÚ HAMBURGUESA (RESPONSIVE)
 // ==========================================================================
 
@@ -119,6 +24,7 @@ const btnSiguiente = document.getElementById('btn-siguiente');
 
 // Función para mostrar un slide específico
 function mostrarSlide(indice) {
+    if (!slides.length) return; // páginas sin carrusel
     // Calcular cuántas imágenes se ven según el ancho de pantalla
     let imagenesPorSlide = 3;
     if (window.innerWidth <= 768) {
@@ -196,35 +102,32 @@ window.addEventListener('resize', function() {
 });
 
 // ==========================================================================
-// CONTROL DE SESIÓN AL CARGAR LA PÁGINA
+// CONTROL DE SESIÓN (SESIÓN PHP)
+// Pregunta a sesion.php si hay sesión y ajusta la navbar
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const sesion = localStorage.getItem('sesion');
+    const liLogin = document.getElementById('li-login');
+    const navLinks = document.querySelector('.nav-links');
+    if (!liLogin || !navLinks) return;
 
-    if (sesion === 'activa') {
-        // Ocultar botón Login
-        const btnLoginLi = document.getElementById('li-login');
-        if (btnLoginLi) {
-            btnLoginLi.style.display = 'none';
-        }
+    fetch('sesion.php', { credentials: 'same-origin' })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (!data.activa) return;
 
-        // Agregar botón Cerrar Sesión si no existe
-        if (!document.getElementById('li-logout')) {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks) {
-                const btnLogout = document.createElement('li');
-                btnLogout.id = 'li-logout';
-                btnLogout.innerHTML = '<a href="#" id="btn-logout">Cerrar Sesión</a>';
-                btnLogout.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    localStorage.removeItem('sesion');
-                    location.reload();
-                });
-                navLinks.appendChild(btnLogout);
-            }
-        }
-    }
+            liLogin.style.display = 'none';
+
+            const liPanel = document.createElement('li');
+            liPanel.innerHTML = '<a href="' + data.panel + '">Mi panel</a>';
+            navLinks.appendChild(liPanel);
+
+            const liLogout = document.createElement('li');
+            liLogout.id = 'li-logout';
+            liLogout.innerHTML = '<a href="logout.php">Cerrar Sesión</a>';
+            navLinks.appendChild(liLogout);
+        })
+        .catch(function() { /* sin servidor PHP: se deja el botón Login */ });
 });
 
 // ==========================================================================
@@ -243,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 2. Configurar envío AJAX para los formularios
-    document.querySelectorAll('form').forEach(function(form) {
+    document.querySelectorAll('form[action*="formspree"]').forEach(function(form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault(); // Evita que la página se recargue
 

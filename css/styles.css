@@ -1633,3 +1633,209 @@ footer {
 .mensaje-exito.visible {
     display: block;
 }
+
+/* ==========================================================================
+   SPRINT 2 - LOGIN PHP, PANELES (CLIENTE / ADMIN) Y ALERTAS
+   ========================================================================== */
+.auth-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #556653;
+}
+
+.auth-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: #556653;
+    text-align: center;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #798278;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-extra {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #798278;
+    margin-top: 1.8rem;
+}
+
+.auth-extra a {
+    color: #556653;
+    font-weight: 500;
+}
+
+/* Alertas (éxito / error) */
+.alerta {
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.alerta-exito {
+    background-color: #e6efe5;
+    color: #3f4d3e;
+    border: 1px solid #b9ceb7;
+}
+
+.alerta-error {
+    background-color: #f8e6e3;
+    color: #b3402f;
+    border: 1px solid #e5bab3;
+}
+
+/* Paneles (sirven para panel_cliente.php y panel_admin.php) */
+.panel-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+    min-height: 70vh;
+}
+
+.panel-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.panel-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #556653;
+}
+
+.panel-header p {
+    color: #798278;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.ficha {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    border-top: 4px solid #556653;
+    padding: 2.5rem;
+}
+
+.ficha-encabezado {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid #ebedea;
+}
+
+.ficha-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #556653;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ficha-encabezado h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #242924;
+}
+
+.ficha-rol {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.8rem;
+    background-color: #e6efe5;
+    color: #556653;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+}
+
+.ficha-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+}
+
+.ficha-datos dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+    margin-bottom: 0.3rem;
+}
+
+.ficha-datos dd {
+    font-size: 1rem;
+    color: #242924;
+    word-break: break-word;
+}
+
+.ficha-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.ficha-form input:disabled {
+    background-color: #f1f3f1;
+    color: #798278;
+    cursor: not-allowed;
+}
+
+.ficha-acciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.ficha-form .ficha-acciones {
+    margin-top: 0.5rem;
+}
+
+.ficha-acciones .btn {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .ficha { padding: 1.8rem 1.4rem; }
+    .ficha-datos { grid-template-columns: 1fr; }
+    .auth-card { padding: 2.2rem 1.5rem; }
+}

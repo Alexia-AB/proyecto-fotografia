@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros | DAIN Studio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -29,16 +29,13 @@
                 <li><a href="proyectos.html">Proyectos</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li id="li-login"><a href="#" id="btn-login">Login</a></li>
+                <li id="li-login"><a href="login.php" id="btn-login">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- CONTENIDO PRINCIPAL DE NOSOTROS -->
-    <main class="nosotros-container">
-
     <!-- SECCIÓN INTRODUCTORIA -->
-    <!-- CONTENIDO PRINCIPAL DE NOSOTROS -->
     <main class="nosotros-container">
         
         <!-- CAMBIO: Sección Intro ahora es un Bloque Hero con Imagen de Fondo -->
@@ -94,32 +91,12 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 DAIN Studio. Todos los derechos reservados. | Materia: Ingeniería de Software II</p>
+        <p>&copy; 2026 DAIN Studio. | Materia: Ingeniería de Software II</p>
     </footer>
 
-    <!-- MODAL DE LOGIN -->
-    <div id="modal-overlay" class="modal-overlay"></div>
-    <div id="login-modal" class="login-modal">
-        <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
-        <h2 class="title-modal">Iniciar Sesión</h2>
-        <form id="form-login" class="form-login">
-            <div class="form-group-login">
-                <label for="input-usuario">Usuario:</label>
-                <input type="text" id="input-usuario" name="usuario" placeholder="Ingrese su usuario" required>
-            </div>
-            <div class="form-group-login">
-                <label for="input-contrasena">Contraseña:</label>
-                <input type="password" id="input-contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
-            </div>
-            <p id="mensaje-error" class="mensaje-error" style="display: none;">
-                Usuario o contraseña incorrectos.
-            </p>
-            <button type="submit" class="btn btn-primary btn-submit-login">Ingresar</button>
-        </form>
-    </div>
 
     <!-- ENLAZAR EL JS -->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
