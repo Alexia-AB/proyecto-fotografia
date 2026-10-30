@@ -1,9 +1,7 @@
 <?php
-// ==========================================================================
 // registro.php - Registro de nuevos clientes (RG-01 a RG-08)
 // Pide: nombre, email, teléfono, usuario y password.
 // El usuario nuevo queda con rol USU_GRAL (rol 4 = cliente).
-// ==========================================================================
 session_start();
 require_once 'includes/conexion.php';
 
