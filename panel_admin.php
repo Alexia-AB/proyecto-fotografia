@@ -1,7 +1,5 @@
 <?php
-// ==========================================================================
 // panel_admin.php - Panel del administrador: ficha de datos + edición (PA-01 a PA-05)
-// ==========================================================================
 session_start();
 require_once 'includes/conexion.php';
 
@@ -25,9 +23,8 @@ if (empty($_SESSION['csrf'])) {
 $errores  = [];
 $editando = isset($_GET['editar']);
 
-// --------------------------------------------------------------------------
 // PA-04: guardar cambios (UPDATE en TB_DETALLE_USUARIOS)
-// --------------------------------------------------------------------------
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $editando = true;
 
@@ -75,9 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// --------------------------------------------------------------------------
 // PA-03: consultar datos del admin logueado (TB_USUARIOS + TB_DETALLE_USUARIOS)
-// --------------------------------------------------------------------------
 $stmt = $pdo->prepare('SELECT u.usuario, u.rol,
                               d.nombre_completo, d.email, d.telefono, d.fecha_registro
                        FROM tb_usuarios u
