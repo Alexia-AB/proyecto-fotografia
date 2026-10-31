@@ -149,6 +149,7 @@ $fecha = date('d/m/Y', strtotime($cliente['fecha_registro']));
                 <li><a href="comercial.html">Comercial</a></li>
                 <li><a href="retrato.html">Retrato</a></li>
                 <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="panel_cliente.php" class="active">Mi panel</a></li>
                 <li><a href="logout.php">Cerrar Sesión</a></li>

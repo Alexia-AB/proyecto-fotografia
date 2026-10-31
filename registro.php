@@ -142,6 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span></span>
             </button>
             <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="comercial.html">Comercial</a></li>
                 <li><a href="retrato.html">Retrato</a></li>
                 <li><a href="proyectos.html">Proyectos</a></li>
