@@ -31,20 +31,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Ingresa tu usuario y contraseña.';
     } else {
         // Prepared statement: evita SQL Injection
-        $stmt = $pdo->prepare('SELECT id_usuario, usuario, password, rol FROM tb_usuarios WHERE usuario = :u LIMIT 1');
+        $stmt = $pdo->prepare('SELECT id_usuario, usuario, password, rol, activo FROM tb_usuarios WHERE usuario = :u LIMIT 1');
         $stmt->execute([':u' => $usuarioIngresado]);
         $fila = $stmt->fetch();
 
         if ($fila && password_verify($password, $fila['password'])) {
-            session_regenerate_id(true);               // seguridad: nuevo id de sesión
-            $_SESSION['id_usuario'] = (int)$fila['id_usuario'];
-            $_SESSION['usuario']    = $fila['usuario'];
-            $_SESSION['rol']        = $fila['rol'];
+            // Sprint 3 (CL04/CL05): un usuario desactivado no puede iniciar sesión
+            if ((int)$fila['activo'] !== 1) {
+                $error = 'Tu cuenta está desactivada. Comunícate con el administrador de DAIN Studio.';
+            } else {
+                session_regenerate_id(true);               // seguridad: nuevo id de sesión
+                $_SESSION['id_usuario'] = (int)$fila['id_usuario'];
+                $_SESSION['usuario']    = $fila['usuario'];
+                $_SESSION['rol']        = $fila['rol'];
 
-            header('Location: ' . destinoPorRol($fila['rol']));
-            exit;
+                header('Location: ' . destinoPorRol($fila['rol']));
+                exit;
+            }
+        } else {
+            $error = 'Usuario o contraseña incorrectos.';
         }
-        $error = 'Usuario o contraseña incorrectos.';
     }
 }
 

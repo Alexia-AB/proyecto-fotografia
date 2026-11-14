@@ -17,6 +17,15 @@ if ($_SESSION['rol'] !== 'USU_GRAL') {
 
 $idUsuario = $_SESSION['id_usuario'];
 
+// Sprint 3: si el administrador desactivó la cuenta, se cierra la sesión
+$chk = $pdo->prepare('SELECT activo FROM tb_usuarios WHERE id_usuario = :id');
+$chk->execute([':id' => $idUsuario]);
+if ((int)$chk->fetchColumn() !== 1) {
+    header('Location: logout.php');
+    exit;
+}
+
+
 // Token CSRF para el formulario de edición
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));

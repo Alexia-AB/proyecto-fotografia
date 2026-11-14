@@ -1,0 +1,207 @@
+/* ==========================================================================
+   SPRINT 3 - PANTALLAS DE GESTIÓN DEL ADMINISTRADOR
+   Tablas, estados, botones chicos y resumen. Se carga DESPUÉS de styles.css.
+   Ingrid también puede reutilizarlo en la gestión de servicios.
+   ========================================================================== */
+
+.panel-ancho {
+    max-width: 1000px;
+}
+
+.volver {
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.volver a {
+    color: #556653;
+    font-weight: 500;
+}
+
+.volver a:hover {
+    text-decoration: underline;
+}
+
+/* Resumen (total / activos / desactivados) */
+.resumen-clientes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.resumen-clientes div {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-top: 3px solid #556653;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.resumen-clientes strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #556653;
+}
+
+.resumen-clientes span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+/* Tabla de datos */
+.tabla-wrapper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    overflow-x: auto;
+}
+
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.tabla-datos th {
+    text-align: left;
+    padding: 1rem 1.2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background-color: #556653;
+    white-space: nowrap;
+}
+
+.tabla-datos td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #ebedea;
+    color: #242924;
+    vertical-align: middle;
+}
+
+.tabla-datos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-datos tbody tr:hover {
+    background-color: #f6f8f6;
+}
+
+.tabla-datos td small {
+    display: block;
+    color: #798278;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+    word-break: break-all;
+}
+
+.fila-inactiva td {
+    color: #798278;
+}
+
+.tabla-vacia {
+    padding: 2.5rem;
+    text-align: center;
+    color: #798278;
+}
+
+/* Insignias de estado */
+.estado {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.estado-activo {
+    background-color: #e6efe5;
+    color: #3f4d3e;
+}
+
+.estado-inactivo {
+    background-color: #f8e6e3;
+    color: #b3402f;
+}
+
+/* Botones chicos para las acciones de la tabla */
+.btn-sm {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-peligro {
+    background-color: transparent;
+    color: #b3402f;
+    border: 1px solid #b3402f;
+}
+
+.btn-peligro:hover {
+    background-color: #b3402f;
+    color: #ffffff;
+}
+
+.celda-acciones {
+    white-space: nowrap;
+}
+
+.form-inline {
+    display: inline;
+}
+
+.nota-campos {
+    font-size: 0.8rem;
+    color: #798278;
+}
+
+/* Tabla en formato tarjeta para celulares */
+@media (max-width: 768px) {
+    .resumen-clientes {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-datos thead {
+        display: none;
+    }
+
+    .tabla-datos tr {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #ebedea;
+    }
+
+    .tabla-datos td {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border: none;
+        text-align: right;
+    }
+
+    .tabla-datos td::before {
+        content: attr(data-label);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #798278;
+        text-align: left;
+    }
+
+    .celda-acciones {
+        justify-content: flex-end;
+    }
+}
