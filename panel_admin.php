@@ -108,6 +108,7 @@ $fecha   = date('d/m/Y', strtotime($admin['fecha_registro']));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración | DAIN Studio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/servicios.css">
 </head>
 <body>
 
@@ -145,6 +146,20 @@ $fecha   = date('d/m/Y', strtotime($admin['fecha_registro']));
 
         <?php if ($flash): ?>
             <p class="alerta alerta-exito"><?= e($flash) ?></p>
+        <?php endif; ?>
+
+        <?php if (!$editando): ?>
+            <!-- NV01: accesos a las pantallas de administración -->
+            <nav class="admin-enlaces">
+                <a href="gestion_clientes.php" class="admin-enlace">
+                    <strong>Gestión de clientes</strong>
+                    <span>Activar, desactivar y editar</span>
+                </a>
+                <a href="servicios_admin.php" class="admin-enlace">
+                    <strong>Servicios</strong>
+                    <span>Alta, edición y catálogo</span>
+                </a>
+            </nav>
         <?php endif; ?>
 
         <section class="ficha">
