@@ -1,0 +1,209 @@
+
+.galeria-ancha {
+    max-width: 1180px;
+}
+
+/* Galería a la izquierda, resumen a la derecha */
+.galeria-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.8rem;
+    align-items: start;
+}
+
+.galeria-layout .servicios-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* Tarjeta seleccionada */
+.galeria-card {
+    border: 2px solid transparent;
+    border-top: 3px solid #556653;
+}
+
+.servicio-seleccionado {
+    border-color: #556653;
+    background-color: #f6f8f6;
+}
+
+/* Selección y cantidad dentro de la tarjeta */
+.seleccion-servicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.check-seleccionar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #3f4d3e;
+}
+
+.check-seleccionar input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #556653;
+    cursor: pointer;
+}
+
+.campo-cantidad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 90px;
+}
+
+.campo-cantidad label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+.campo-cantidad input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.55rem 0.6rem;
+    border: 1px solid #ccd4cb;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #242924;
+}
+
+.campo-cantidad input:focus {
+    outline: none;
+    border-color: #556653;
+    box-shadow: 0 0 0 3px rgba(85, 102, 83, 0.12);
+}
+
+.campo-cantidad input:disabled {
+    background-color: #f1f3f1;
+    color: #9aa399;
+}
+
+/* Resumen de la selección */
+.resumen-solicitud {
+    position: sticky;
+    top: 6rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-top: 3px solid #556653;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    padding: 1.6rem;
+}
+
+.resumen-solicitud h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #556653;
+    margin-bottom: 1rem;
+}
+
+.resumen-vacio {
+    font-size: 0.85rem;
+    color: #798278;
+    padding: 0.5rem 0 1rem;
+}
+
+.resumen-lista {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ebedea;
+}
+
+.resumen-item strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #242924;
+}
+
+.resumen-item span {
+    font-size: 0.75rem;
+    color: #798278;
+}
+
+.resumen-quitar {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #b3402f;
+    border-radius: 50%;
+    background: transparent;
+    color: #b3402f;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.resumen-quitar:hover {
+    background-color: #b3402f;
+    color: #ffffff;
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.8rem 0 0.4rem;
+}
+
+.resumen-total span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+.resumen-total strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #556653;
+}
+
+.resumen-nota {
+    font-size: 0.72rem;
+    color: #798278;
+    margin-bottom: 1.2rem;
+}
+
+.resumen-solicitud .btn {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.resumen-solicitud .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Celulares y tabletas: el resumen pasa debajo de las tarjetas */
+@media (max-width: 900px) {
+    .galeria-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .resumen-solicitud {
+        position: static;
+    }
+}

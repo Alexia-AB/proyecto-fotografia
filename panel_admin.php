@@ -108,6 +108,7 @@ $fecha   = date('d/m/Y', strtotime($admin['fecha_registro']));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración | DAIN Studio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gestion.css">
     <link rel="stylesheet" href="css/servicios.css">
 </head>
 <body>

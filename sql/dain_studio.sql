@@ -1,5 +1,5 @@
 -- ==========================================================================
--- DAIN Studio - Sprint 3 (incluye lo del Sprint 2)
+-- DAIN Studio - Sprint 4 (incluye lo de los Sprints 2 y 3)
 -- Base de datos: dain_studio
 -- Importar desde phpMyAdmin (pestaña "Importar") o pegar en la pestaña "SQL".
 -- OJO: este script BORRA y recrea las 3 tablas (los datos actuales se pierden).
@@ -116,3 +116,9 @@ INSERT INTO tb_servicios (nombre, descripcion, cantidad, precio, visible) VALUES
 ('Gastronomía y Food Styling','Imágenes para menús digitales y campañas de alimentos.',   15, 5200.00, 1),
 ('Retrato profesional',      'Foto para LinkedIn, perfiles y equipos corporativos.',       5, 1800.00, 1),
 ('Arquitectura e Interiorismo','Reportaje fotográfico de espacios comerciales.',           20, 7500.00, 0);
+
+-- Sprint 4 (DB01): solicitudes de prueba del cliente de ejemplo (usuario 2)
+INSERT INTO tb_solicitudes (id_usuario, id_servicio, cantidad, estatus) VALUES
+(2, 1, 1, 'SOLICITADO'),
+(2, 2, 2, 'EN_PROCESO'),
+(2, 3, 1, 'FINALIZADO');

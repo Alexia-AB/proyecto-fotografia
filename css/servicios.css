@@ -1,0 +1,286 @@
+/* ==========================================================================
+   SPRINT 3 - SERVICIOS Y ENLACES DEL PANEL DE ADMINISTRADOR
+   Va en css/servicios.css. Se carga DESPUÉS de styles.css y gestion.css:
+
+     <link rel="stylesheet" href="css/styles.css">
+     <link rel="stylesheet" href="css/gestion.css">
+     <link rel="stylesheet" href="css/servicios.css">
+
+   (panel_admin.php también necesita el enlace a servicios.css para los
+    botones de "Gestión de clientes" y "Servicios".)
+   ========================================================================== */
+
+/* ---------- Formulario: textarea con el mismo aspecto que los inputs ---------- */
+.form-group-login textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 120px;
+    padding: 0.9rem 1.1rem;          /* aire entre el texto y el borde */
+    border: 1px solid #ccd4cb;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: inherit;            /* misma letra que el resto del sitio */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #242924;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group-login textarea::placeholder {
+    color: #9aa399;
+}
+
+.form-group-login textarea:focus {
+    outline: none;
+    border-color: #556653;
+    box-shadow: 0 0 0 3px rgba(85, 102, 83, 0.12);
+}
+
+/* Número (precio, cantidad): sin las flechitas que estorban */
+.form-group-login input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.form-group-login input[type="number"]::-webkit-outer-spin-button,
+.form-group-login input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Texto de ayuda debajo de un campo (opcional: <small class="ayuda-campo">) */
+.ayuda-campo {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    color: #798278;
+}
+
+/* Casilla "Publicar en el catálogo" */
+.check-visible {
+    padding: 0.9rem 1rem;
+    background-color: #f6f8f6;
+    border: 1px solid #e1e6e0;
+    border-radius: 4px;
+}
+
+.check-visible label {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #3f4d3e;
+}
+
+.check-visible input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: #556653;
+}
+
+/* ---------- Botón "Nuevo servicio" ---------- */
+.barra-acciones {
+    margin-bottom: 1.8rem;
+    text-align: right;
+}
+
+.barra-acciones .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* ---------- Tarjetas de servicio ---------- */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.6rem;
+}
+
+.servicio-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-top: 3px solid #556653;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    padding: 1.7rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-oculto {
+    border-top-color: #b3402f;
+    background-color: #fbfbfa;
+}
+
+.servicio-oculto h3,
+.servicio-oculto .servicio-desc,
+.servicio-oculto .servicio-datos strong {
+    color: #8b948a;
+}
+
+.servicio-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicio-solicitudes {
+    font-size: 0.7rem;
+    color: #798278;
+    letter-spacing: 1px;
+}
+
+.servicio-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #556653;
+    margin-bottom: 0.6rem;
+}
+
+.servicio-desc {
+    flex-grow: 1;
+    margin-bottom: 1.3rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #5f685e;
+}
+
+.servicio-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    margin-bottom: 1.3rem;
+    border-top: 1px solid #ebedea;
+    border-bottom: 1px solid #ebedea;
+}
+
+.servicio-datos strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #556653;
+}
+
+.servicio-datos span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+.servicio-precio {
+    text-align: right;
+}
+
+/* Botones de la tarjeta: parejos, del mismo tamaño y sin saltos raros */
+.servicio-acciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.6rem;
+}
+
+.servicio-acciones form {
+    margin: 0;
+    display: block;
+}
+
+.servicio-acciones .btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+/* ---------- Botones de acceso en panel_admin.php (NV01) ---------- */
+.admin-enlaces {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.admin-enlace {
+    position: relative;
+    display: block;
+    padding: 1.5rem 3rem 1.5rem 1.6rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-top: 3px solid #556653;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.admin-enlace::after {
+    content: "\2192";                /* flecha → */
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #556653;
+    transition: transform 0.25s ease;
+}
+
+.admin-enlace:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    background-color: #f6f8f6;
+}
+
+.admin-enlace:hover::after {
+    transform: translate(4px, -50%);
+}
+
+.admin-enlace strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #556653;
+}
+
+.admin-enlace span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 768px) {
+    .admin-enlaces {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-acciones {
+        text-align: center;
+    }
+
+    .barra-acciones .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

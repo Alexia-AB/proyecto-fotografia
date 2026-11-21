@@ -1,10 +1,4 @@
 <?php
-// ==========================================================================
-// servicios_admin.php - Alta y gestión de servicios + catálogo (Sprint 3)
-//   SV01 lista protegida (solo ADMIN)      SV02/SV03 alta con validaciones
-//   SV04 modificar                          SV05 eliminar con confirmación
-//   SV06 tarjetas de servicio               CT01/CT02 publicar / ocultar
-// ==========================================================================
 session_start();
 require_once 'includes/conexion.php';
 
@@ -49,13 +43,15 @@ function validarServicio(array $post): array {
         $errores[] = 'La descripción es demasiado larga (máximo 255 caracteres).';
     }
 
-    $cantidad = filter_var($cantidadTxt, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 100000]]);
+    $cantidad = filter_var($cantidadTxt, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 999]]);
     if ($cantidad === false) {
-        $errores[] = 'La cantidad debe ser un número entero mayor a 0.';
+        $errores[] = 'La cantidad debe ser un número entero entre 1 y 999.';
     }
 
-    if (!preg_match('/^\d{1,8}(\.\d{1,2})?$/', $precioTxt) || (float)$precioTxt <= 0) {
-        $errores[] = 'El precio debe ser un número mayor a 0 (máximo 2 decimales).';
+    // Precio: mínimo $1.00 y máximo $999,999.99 (máximo 2 decimales)
+    if (!preg_match('/^\d{1,6}(\.\d{1,2})?$/', $precioTxt)
+        || (float)$precioTxt < 1 || (float)$precioTxt > 999999.99) {
+        $errores[] = 'El precio debe ser un número entre $1.00 y $999,999.99 (máximo 2 decimales).';
     }
 
     $datos = [
@@ -315,12 +311,12 @@ if ($modo === 'lista') {
                     </div>
                     <div class="form-group-login">
                         <label for="cantidad">Cantidad (por ejemplo, fotografías incluidas)</label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" max="100000" step="1"
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="999" step="1"
                                value="<?= e($form['cantidad']) ?>" required>
                     </div>
                     <div class="form-group-login">
                         <label for="precio">Precio (MXN)</label>
-                        <input type="number" id="precio" name="precio" min="0.01" step="0.01"
+                        <input type="number" id="precio" name="precio" min="1" max="999999.99" step="0.01"
                                placeholder="0.00" value="<?= e($form['precio']) ?>" required>
                     </div>
                     <div class="form-group-login check-visible">
