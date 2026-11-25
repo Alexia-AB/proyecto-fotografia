@@ -1,0 +1,33 @@
+/* ==========================================================================
+   SPRINT 4 - MIS SOLICITUDES Y ENLACES DEL PANEL DEL CLIENTE
+   Se carga DESPUÉS de styles.css, gestion.css y servicios.css.
+   Usa la insignia base .estado de gestion.css y solo agrega los colores.
+   ========================================================================== */
+
+/* Insignias de estatus (MS03) */
+.estatus-solicitado {
+    background-color: #fbf1d9;
+    color: #8a6414;
+}
+
+.estatus-proceso {
+    background-color: #e1ecf8;
+    color: #2f5a8a;
+}
+
+.estatus-finalizado {
+    background-color: #e6efe5;
+    color: #3f4d3e;
+}
+
+/* Texto cuando la solicitud ya no se puede cambiar */
+.sin-acciones {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #798278;
+}
+
+/* Tercer acceso del panel del cliente: ocupa todo el ancho (NV01) */
+.admin-enlace-ancho {
+    grid-column: 1 / -1;
+}

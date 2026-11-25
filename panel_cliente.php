@@ -137,6 +137,8 @@ $fecha = date('d/m/Y', strtotime($cliente['fecha_registro']));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Panel | DAIN Studio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/servicios.css">
+    <link rel="stylesheet" href="css/solicitudes.css">
 </head>
 <body>
 
@@ -174,6 +176,24 @@ $fecha = date('d/m/Y', strtotime($cliente['fecha_registro']));
 
         <?php if ($flash): ?>
             <p class="alerta alerta-exito"><?= e($flash) ?></p>
+        <?php endif; ?>
+
+        <?php if (!$editando): ?>
+            <!-- NV01: accesos a las pantallas del cliente -->
+            <nav class="admin-enlaces">
+                <a href="galeria_servicios.php" class="admin-enlace">
+                    <strong>Galería de servicios</strong>
+                    <span>Elige y solicita</span>
+                </a>
+                <a href="mis_solicitudes.php" class="admin-enlace">
+                    <strong>Mis solicitudes</strong>
+                    <span>Estatus, modificar y cancelar</span>
+                </a>
+                <a href="cambiar_password.php" class="admin-enlace admin-enlace-ancho">
+                    <strong>Cambiar contraseña</strong>
+                    <span>Actualiza tu acceso</span>
+                </a>
+            </nav>
         <?php endif; ?>
 
         <section class="ficha">
