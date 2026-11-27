@@ -93,3 +93,22 @@ proyectoFotografia/
 | 5 | Gestión de solicitudes del administrador, pruebas, seguridad y documentación final. |
 
 La planeación de cada sprint está en la carpeta `Documentaciones/`.
+
+## Alcance y trabajo futuro
+
+Durante la planeación se evaluaron dos procesos que quedaron **fuera del alcance de esta entrega**: la
+**gestión de pagos** y el **historial de servicios**. El total que muestra la galería es solo una referencia
+(“total estimado”): el estudio confirma con el cliente la fecha, los detalles y el monto final de cada servicio.
+
+Mejoras que se podrían desarrollar en una siguiente etapa:
+
+| Mejora | Descripción |
+|---|---|
+| **Pagos en línea** | Integrar una pasarela de pago (por ejemplo Mercado Pago, Stripe o PayPal) para pagar los servicios solicitados. Requiere cuenta de desarrollador, llaves de API, páginas de pago exitoso y fallido, y confirmar el pago desde el servidor, por lo que necesita un sitio accesible desde internet con HTTPS. |
+| **Estado de pago** | Versión sencilla previa a la pasarela: un campo en cada solicitud que el administrador marca cuando recibe el pago por otro medio. |
+| **Notificaciones por correo** | Avisar al cliente cuando el estatus de su solicitud cambia a EN PROCESO o FINALIZADO. |
+| **Historial de servicios** | Vista del cliente con sus servicios finalizados, fechas y detalles. |
+| **Entrega de fotografías** | Galería privada para que el cliente descargue sus fotografías terminadas. |
+| **Agenda de sesiones** | Elegir fecha y hora para cada servicio solicitado. |
+| **Recuperación de contraseña** | Restablecer el acceso por correo electrónico. |
+| **Catálogo ampliado** | Imágenes y categorías para cada servicio. |
