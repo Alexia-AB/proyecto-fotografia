@@ -110,6 +110,7 @@ $fecha   = date('d/m/Y', strtotime($admin['fecha_registro']));
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/gestion.css">
     <link rel="stylesheet" href="css/servicios.css">
+    <link rel="stylesheet" href="css/solicitudes.css">
 </head>
 <body>
 
@@ -151,6 +152,11 @@ $fecha   = date('d/m/Y', strtotime($admin['fecha_registro']));
 
         <?php if (!$editando): ?>
             <!-- NV01: accesos a las pantallas de administración -->
+            <a href="gestion_solicitudes.php" class="admin-enlace admin-enlace-ancho">
+                <strong>Gestión de solicitudes</strong>
+                <span>Atiende y cambia el estatus</span>
+            </a>
+            
             <nav class="admin-enlaces">
                 <a href="gestion_clientes.php" class="admin-enlace">
                     <strong>Gestión de clientes</strong>

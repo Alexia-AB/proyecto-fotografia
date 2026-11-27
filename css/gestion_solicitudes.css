@@ -1,0 +1,78 @@
+/* ==========================================================================
+   SPRINT 5 - GESTIÓN DE SOLICITUDES DEL ADMINISTRADOR (GS06, GS07, GS08)
+   ========================================================================== */
+
+/* Contadores: total y uno por estatus */
+.resumen-solicitudes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.resumen-solicitudes div {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-top: 3px solid #556653;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.resumen-solicitudes strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #556653;
+}
+
+.resumen-solicitudes span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #798278;
+}
+
+/* Filtro por estatus */
+.filtros-estatus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtros-estatus a {
+    padding: 0.55rem 1.2rem;
+    background-color: #ffffff;
+    border: 1px solid #ccd4cb;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #556653;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.filtros-estatus a:hover {
+    border-color: #556653;
+}
+
+.filtros-estatus a.activo {
+    background-color: #556653;
+    border-color: #556653;
+    color: #ffffff;
+}
+
+/* Dos botones de acción en la misma celda */
+.celda-acciones .form-inline + .form-inline,
+.celda-acciones .form-inline + .sin-acciones {
+    margin-left: 0.4rem;
+}
+
+@media (max-width: 768px) {
+    .resumen-solicitudes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
