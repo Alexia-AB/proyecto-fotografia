@@ -1,0 +1,13 @@
+# Editor y sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Archivos comprimidos y temporales
+*.rar
+*.zip
+*.log
+*.tmp
+*.bak
